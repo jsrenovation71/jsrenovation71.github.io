@@ -1,95 +1,377 @@
 <!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>JS Peintre & Rénovation | Montceau-les-Mines</title>
-<meta name="description" content="JS Peintre & Rénovation : peinture intérieure et extérieure, rénovation et remise en état à Montceau-les-Mines et en Saône-et-Loire. Devis et déplacement gratuits.">
-<style>
-:root{--blue:#0878c9;--dark:#17212b;--light:#f5f7f9;--gold:#d9a441}
-*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--dark);background:white;line-height:1.6}
-a{text-decoration:none;color:inherit}.top{background:var(--dark);color:#fff;text-align:center;padding:9px 16px;font-size:14px}
-nav{position:sticky;top:0;z-index:10;background:#fff;border-bottom:1px solid #e7ebef;display:flex;align-items:center;justify-content:space-between;padding:13px 5vw}
-.brand{font-weight:900;font-size:21px;color:var(--blue)}.brand span{color:var(--dark)}
-.menu{display:flex;gap:25px;font-weight:700;font-size:14px}.menu a:hover{color:var(--blue)}
-.cta{background:var(--blue);color:#fff;padding:11px 17px;border-radius:8px;font-weight:800}
-.hero{min-height:650px;display:grid;grid-template-columns:1.05fr .95fr;gap:35px;align-items:center;padding:65px 7vw;background:linear-gradient(135deg,#f6fbff 0%,#fff 55%,#eef6fb 100%)}
-.badge{display:inline-block;background:#e5f3fc;color:var(--blue);padding:7px 12px;border-radius:99px;font-weight:800;font-size:13px}
-h1{font-size:clamp(42px,6vw,72px);line-height:1.02;margin:18px 0 20px;letter-spacing:-2px}.hero h1 span{color:var(--blue)}
-.hero p{font-size:20px;max-width:650px;color:#52606d}.buttons{display:flex;gap:13px;flex-wrap:wrap;margin-top:28px}.btn{padding:14px 20px;border-radius:9px;font-weight:800}.primary{background:var(--blue);color:#fff}.secondary{background:#eaf3ff;color:var(--blue)}
-.hero-img{width:100%;height:500px;object-fit:cover;border-radius:22px;box-shadow:0 22px 60px #132b3a22}
-section{padding:80px 7vw}.section-head{max-width:720px;margin-bottom:38px}.eyebrow{color:var(--blue);font-weight:900;text-transform:uppercase;letter-spacing:1.5px;font-size:13px}.section-head h2{font-size:clamp(32px,5vw,52px);line-height:1.12;margin:10px 0 12px}.section-head p{font-size:18px;color:#60707d;margin:0}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.card{padding:28px;border:1px solid #e6ebef;border-radius:16px;background:#fff;box-shadow:0 8px 25px #17212b0b}.icon{font-size:30px;margin-bottom:10px}.card h3{margin:0 0 12px;font-size:23px}.card p{margin:0;color:#566575}.dark-section{background:var(--dark);color:#fff}.dark-section .section-head p{color:#b9c5cf}.dark-section .card{background:#202d38;border-color:#34424e}.dark-section .card p{color:#c2cbd2}
-.gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.gallery img{width:100%;height:230px;object-fit:cover;border-radius:12px;cursor:pointer;transition:.2s}.gallery img:hover{transform:translateY(-3px)}
-.reassurance{display:grid;grid-template-columns:repeat(4,1fr);gap:15px;margin-top:30px}.pill{padding:22px;background:#fff;border:1px solid #e6ebef;border-radius:14px;text-align:center;font-weight:800}.pill b{display:block;color:var(--blue);font-size:20px;margin-bottom:4px}
-.contact{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:start}.contact-box{background:var(--light);border-radius:18px;padding:32px}.contact-box h3{font-size:27px;margin-top:0}.contact-line{padding:10px 0;border-bottom:1px solid #dfe6eb;font-size:17px}.contact-line:last-child{border-bottom:none}
-footer{background:#0f171e;color:#d9e1e7;padding:30px 7vw;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:14px}
-@media(max-width:850px){.menu{display:none}.hero{grid-template-columns:1fr;padding-top:40px}.hero-img{height:330px}.cards{grid-template-columns:1fr}.gallery{grid-template-columns:repeat(2,1fr)}.contact{grid-template-columns:1fr}.reassurance{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:520px){.gallery{grid-template-columns:1fr}.gallery img{height:250px}.reassurance{grid-template-columns:1fr}.hero{min-height:auto}.hero h1{font-size:46px}}
-</style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JS Peintre & Rénovation | Montceau-les-Mines</title>
+  <meta name="description" content="JS Peintre & Rénovation : peinture intérieure et extérieure, rénovation et remise en état à Montceau-les-Mines et en Saône-et-Loire. Devis gratuit, déplacement gratuit.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="top">📍 Montceau-les-Mines & toute la Saône-et-Loire · <strong>Devis et déplacement gratuits</strong></div>
-<nav>
-  <a class="brand" href="index.html">JS <span>Peintre & Rénovation</span></a>
-  <div class="menu"><a href="#prestations">Prestations</a><a href="#realisations">Réalisations</a><a href="page2.html">Nos services</a><a href="#contact">Contact</a></div>
-  <a class="cta" href="tel:+33767515080">07 67 51 50 80</a>
-</nav>
+  <div class="topbar">📍 Montceau-les-Mines & toute la Saône-et-Loire · <strong>Devis et déplacement gratuits</strong></div>
 
-<main>
-<section class="hero">
-  <div>
-    <div class="badge">Peinture & rénovation · Intérieur / extérieur</div>
-    <h1>Donnez une nouvelle vie à votre <span>maison.</span></h1>
-    <p>JS Peintre & Rénovation vous accompagne pour vos travaux de peinture intérieure et extérieure, rénovation et remise en état, avec un travail soigné et des finitions propres.</p>
-    <div class="buttons"><a class="btn primary" href="tel:+33767515080">📞 Appeler maintenant</a><a class="btn secondary" href="#contact">Demander un devis gratuit</a></div>
-    <div class="reassurance">
-      <div class="pill"><b>✓</b>Devis gratuit</div>
-      <div class="pill"><b>✓</b>Déplacement gratuit</div>
-      <div class="pill"><b>✓</b>Travaux soignés</div>
-      <div class="pill"><b>✓</b>Rénovation maison</div>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="index.html" class="brand">JS <span>Peintre & Rénovation</span></a>
+      <nav class="main-nav" aria-label="Navigation principale">
+        <a href="#prestations">Prestations</a>
+        <a href="#realisations">Réalisations</a>
+        <a href="page2.html">Nos services</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="tel:+33767515080" class="cta-button">07 67 51 50 80</a>
     </div>
-  </div>
-  <img class="hero-img" src="images/AA447EEC-9ACB-480E-B3C5-34B2C4293FFE.jpeg" alt="Réalisation de peinture et rénovation">
-</section>
+  </header>
 
-<section id="prestations">
- <div class="section-head"><div class="eyebrow">Nos prestations</div><h2>Intérieur et extérieur</h2><p>Des solutions adaptées à votre maison, de la préparation des supports jusqu’aux finitions, pour un résultat durable et élégant.</p></div>
- <div class="cards">
-  <article class="card"><div class="icon">🎨</div><h3>Peinture intérieure</h3><p>Murs, plafonds, pièces de vie, chambres et finitions décoratives.</p></article>
-  <article class="card"><div class="icon">🏠</div><h3>Peinture extérieure</h3><p>Rafraîchissement et protection des surfaces extérieures de votre habitation.</p></article>
-  <article class="card"><div class="icon">🧱</div><h3>Rénovation</h3><p>Remise en état, préparation des supports et travaux de rénovation.</p></article>
-  <article class="card"><div class="icon">🪣</div><h3>Préparation des supports</h3><p>Préparation soignée pour obtenir un rendu durable et propre.</p></article>
-  <article class="card"><div class="icon">✨</div><h3>Finitions</h3><p>Attention portée aux détails pour une finition nette et régulière.</p></article>
-  <article class="card"><div class="icon">🏡</div><h3>Maison & façades</h3><p>Travaux de rénovation pour embellir et entretenir votre habitation.</p></article>
- </div>
-</section>
+  <main>
+    <section class="hero section-surface">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <span class="badge">Peinture & rénovation · Intérieur / extérieur</span>
+          <h1>Donnez une nouvelle vie à votre <span>maison</span>.</h1>
+          <p>JS Peintre & Rénovation réalise des travaux de peinture intérieure, peinture extérieure et rénovation avec un souci permanent de qualité, de propreté et de finition.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="tel:+33767515080">📞 Appeler maintenant</a>
+            <a class="btn btn-secondary" href="#contact">Demander un devis</a>
+          </div>
+          <div class="trust-row">
+            <div><strong>✓</strong> Devis gratuit</div>
+            <div><strong>✓</strong> Déplacement gratuit</div>
+            <div><strong>✓</strong> Travail soigné</div>
+          </div>
+        </div>
 
-<section id="realisations" class="dark-section">
-  <div class="section-head"><div class="eyebrow">Réalisations</div><h2>Quelques travaux réalisés</h2><p>Découvrez les photos de vos chantiers et réalisations.</p></div>
-  <div class="gallery">
-<img src="images/7EA9415A-774C-474B-BDB7-C8DE3E5575AD.jpeg" alt="Réalisation JS Peintre & Rénovation" loading="lazy"><img src="images/AA447EEC-9ACB-480E-B3C5-34B2C4293FFE.jpeg" alt="Peinture extérieure" loading="lazy"><img src="images/7EA9415A-774C-474B-BDB7-C8DE3E5575AD.jpeg" alt="Rénovation" loading="lazy"><img src="images/AA447EEC-9ACB-480E-B3C5-34B2C4293FFE.jpeg" alt="Finition" loading="lazy">
-  </div>
-</section>
+        <div class="hero-visual">
+          <img src="images/AA447EEC-9ACB-480E-B3C5-34B2C4293FFE.jpeg" alt="Réalisation de peinture et rénovation">
+        </div>
+      </div>
+    </section>
 
-<section id="contact">
-  <div class="contact">
-   <div>
-    <div class="eyebrow">Parlons de votre projet</div>
-    <h2 style="font-size:42px;line-height:1.1;margin:10px 0 15px">Un projet de peinture ou de rénovation ?</h2>
-    <p style="font-size:18px;color:#65727e">Contactez JS Peintre & Rénovation pour échanger sur vos travaux et obtenir votre devis.</p>
-    <div class="buttons"><a class="btn primary" href="tel:+33767515080">📞 07 67 51 50 80</a><a class="btn secondary" href="sms:+33767515080">💬 Envoyer un SMS</a></div>
-   </div>
-   <div class="contact-box">
-    <h3>JS Peintre & Rénovation</h3>
-    <div class="contact-line">📍 <strong>Secteur :</strong> Montceau-les-Mines et Saône-et-Loire</div>
-    <div class="contact-line">🎨 <strong>Spécialité :</strong> peinture intérieure & extérieure</div>
-    <div class="contact-line">🏠 <strong>Services :</strong> rénovation & remise en état</div>
-    <div class="contact-line">💰 <strong>Devis :</strong> gratuit</div>
-    <div class="contact-line">🚗 <strong>Déplacement :</strong> gratuit</div>
-   </div>
-  </div>
-</section>
-</main>
-<footer><div><strong>JS Peintre & Rénovation</strong> · Montceau-les-Mines</div><div>07 67 51 50 80 · Devis et déplacement gratuits</div></footer>
-</body></html>
+    <section class="stats-section">
+      <div class="container stats-grid">
+        <div class="stat-card">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Années d’expérience</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">100%</span>
+          <span class="stat-label">Soin du détail</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">Gratuit</span>
+          <span class="stat-label">Devis & déplacement</span>
+        </div>
+        <div class="stat-card">
+          <span class="stat-number">Local</span>
+          <span class="stat-label">Montceau-les-Mines</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="prestations" class="services-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Nos prestations</span>
+          <h2>Des solutions complètes pour l’intérieur et l’extérieur</h2>
+        </div>
+
+        <div class="cards-grid">
+          <article class="service-card">
+            <div class="icon">🎨</div>
+            <h3>Peinture intérieure</h3>
+            <p>Peinture de murs, plafonds, chambres, salons et pièces de vie avec un rendu net et lumineux.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🏠</div>
+            <h3>Peinture extérieure</h3>
+            <p>Protection et embellissement des façades, murs extérieurs et éléments visibles de la maison.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🧱</div>
+            <h3>Rénovation</h3>
+            <p>Remise en état de surfaces, préparation de supports et interventions de rénovation plus globale.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">🪣</div>
+            <h3>Préparation des supports</h3>
+            <p>Nettoyage, rebouchage, ponçage et préparation du support pour une finition durable.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">✨</div>
+            <h3>Finitions soignées</h3>
+            <p>Une attention particulière aux détails pour une finition propre, uniforme et élégante.</p>
+          </article>
+
+          <article class="service-card">
+            <div class="icon">📍</div>
+            <h3>Intervention locale</h3>
+            <p>Nous intervenons dans Montceau-les-Mines et sur tout le secteur de la Saône-et-Loire.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-section dark-bg">
+      <div class="container about-grid">
+        <div class="about-copy">
+          <span class="eyebrow light">Pourquoi nous choisir ?</span>
+          <h2>Une équipe à l’écoute pour des travaux de qualité.</h2>
+          <p>Que ce soit pour une simple peinture de pièce ou une rénovation plus complète, nous mettons tout en œuvre pour offrir un service sérieux, propre et conforme à vos attentes.</p>
+          <ul>
+            <li>Travaux réalisés avec sérieux et rigueur</li>
+            <li>Conseils personnalisés selon votre projet</li>
+            <li>Finition propre, durable et esthétique</li>
+          </ul>
+        </div>
+
+        <div class="process-box">
+          <div class="process-step">
+            <span>01</span>
+            <h3>Échange</h3>
+            <p>Nous analysons votre besoin et votre budget.</p>
+          </div>
+          <div class="process-step">
+            <span>02</span>
+            <h3>Devis</h3>
+            <p>Un devis clair et gratuit vous est proposé.</p>
+          </div>
+          <div class="process-step">
+            <span>03</span>
+            <h3>Réalisation</h3>
+            <p>Nous intervenons avec soin et ponctualité.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="realisations" class="gallery-section">
+      <div class="container">
+        <div class="section-heading">
+          <span class="eyebrow">Réalisations</span>
+          <h2>Quelques travaux réalisés</h2>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="images/7EA9415A-774C-474B-BDB7-C8DE3E5575AD.jpeg" alt="Travaux de peinture et rénovation">
+          <img src="images/AA447EEC-9ACB-480E-B3C5-34B2C4293FFE.jpeg" alt="Rénovation intérieure et extérieure">
+          <img src="images/7EA9415A-774C-474B-BDB7-C8DE3E5575AD.jpeg" alt="Réalisation JS Peintre & Rénovation">
+          <img src="images/AA447EEC-9ACB-480E-B3C5-34B2C4293FFE.jpeg" alt="Peinture maison et façade">
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+      <div class="container contact-grid">
+        <div>
+          <span class="eyebrow">Parlons de votre projet</span>
+          <h2>Un projet de peinture ou de rénovation ?</h2>
+          <p>Contactez-nous pour échanger sur vos travaux et obtenir un devis personnalisé.</p>
+          <div class="button-row">
+            <a class="btn btn-primary" href="tel:+33767515080">📞 07 67 51 50 80</a>
+            <a class="btn btn-secondary" href="sms:+33767515080">💬 Envoyer un SMS</a>
+          </div>
+        </div>
+
+        <aside class="contact-card">
+          <h3>JS Peintre & Rénovation</h3>
+          <div class="contact-line">📍 <strong>Secteur :</strong> Montceau-les-Mines et Saône-et-Loire</div>
+          <div class="contact-line">🎨 <strong>Spécialité :</strong> peinture intérieure & extérieure</div>
+          <div class="contact-line">🏠 <strong>Services :</strong> rénovation & remise en état</div>
+          <div class="contact-line">💰 <strong>Devis :</strong> gratuit</div>
+          <div class="contact-line">🚗 <strong>Déplacement :</strong> gratuit</div>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div><strong>JS Peintre & Rénovation</strong> · Montceau-les-Mines</div>
+    <div>07 67 51 50 80 · Devis et déplacement gratuits</div>
+  </footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
